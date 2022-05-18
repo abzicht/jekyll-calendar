@@ -1,0 +1,15 @@
+<div class="calendar-category-container">
+	<form action="">
+	<ul>
+		{% for category in site.data.calendar.categories %}
+		<li class="calendar-category--{{category.id}}">
+			<input
+			onchange="calendar_category_update('#cal-cat--{{category.id}}-input',
+			'{{category.id}}');" id="cal-cat--{{category.id}}-input"
+			type="checkbox" checked="true">
+			<label for="cal-cat--{{category.id}}-input">{{category.name}}</label>
+		</li>
+		{% endfor %}
+	</ul>
+	</form>
+</div>

@@ -1,0 +1,7 @@
+title: Jekyll Calendar
+email: abzicht@gmail.com
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed

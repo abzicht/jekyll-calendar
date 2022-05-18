@@ -1,0 +1,19 @@
+<div class="calendar-container">
+	<div class="calendar-header">
+		<div style="grid-column:2; grid-row:1">
+			<h1 id="calendar-month"></h1>
+			<p id="calendar-year"></p>
+		</div>
+		<a onclick="calendar_month_update('previous')" style="grid-column:1; grid-row:2">
+			<i class="fas fa-chevron-left"></i>
+		</a>
+		<a onclick="calendar_month_update('next')" style="grid-column:3; grid-row:2">
+			<i class="fas fa-chevron-right"></i>
+		</a>
+		<a onclick="calendar_month_update('now')" style="grid-column:2; grid-row:2">
+			<i class="fas fa-home"></i>
+		</a>
+	</div>
+	<div class="calendar">
+	</div>
+</div>

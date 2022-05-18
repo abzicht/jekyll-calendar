@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Abzicht//Example Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Example Title
+X-WR-TIMEZONE:Europe/Berlin
+X-WR-CALDESC:Example Description{% for entry in site.data.calendar.entries %}
+BEGIN:VEVENT
+UID:{{entry.id}}/{{ entry.date }}
+SUMMARY:{{ entry.name }}
+CATEGORIES:{% for category in site.data.calendar.categories %}{% if category.id ==
+entry.category %}{{ category.name }}{% endif %}{% endfor %}
+DESCRIPTION:{{ entry.description | strip | replace: "[^\r]\n", "\r\n" }}
+DTSTART;VALUE=DATE:{{ site.time | date: '%Y' }}{{ entry.date | date: "%m%d"}}{% if entry.singular == false %}
+RRULE:FREQ=YEARLY;BYMONTH={{ entry.date | date: "%-m"}};BYMONTHDAY={{ entry.date | date: "%-d"}}
+{% endif %}END:VEVENT{% endfor %}
+END:VCALENDAR

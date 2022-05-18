@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="{{site.baseurl}}/css/calendar.css">
+	<script defer="" src="{{site.baseurl}}/js/fontawesome_all_v5.7.2.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Jekyll Calendar</h1>
+	</header>
+	<main>
+		{{ content }}
+	</main>
+	<footer></footer>
+</body>
+
+</html>
